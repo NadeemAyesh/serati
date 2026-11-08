@@ -2,7 +2,12 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    let mongoUri = (process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/seerati_cv_db').trim();
+    let mongoUri = (
+      process.env.MONGODB_URI || 
+      process.env.MONGO_URL || 
+      process.env.MONGODB_URL || 
+      'mongodb://127.0.0.1:27017/seerati_cv_db'
+    ).trim();
     
     // Remove wrapping quotes if added by mistake in environment settings
     if ((mongoUri.startsWith('"') && mongoUri.endsWith('"')) || (mongoUri.startsWith("'") && mongoUri.endsWith("'"))) {
