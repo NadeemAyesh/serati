@@ -2817,7 +2817,7 @@ export class CvBuilderComponent implements OnInit {
         'ترجمة ذكية للسير الذاتية وتصدير بعدة نسخ لغوية لشركات الخارج',
         'إنشاء عدد غير محدود من السير الذاتية لكافة الأسواق العالمية'
       ],
-      confirmText: 'ترقية الحساب إلى Pro',
+      confirmText: 'ترقية الحساب إلى Pro (19 ₪ فقط)',
       cancelText: 'إلغاء'
     }).then(upgrade => {
       if (upgrade) {
@@ -2883,7 +2883,7 @@ export class CvBuilderComponent implements OnInit {
           'توقيع رقمي رسمي مع ختم التاريخ والاعتماد الأمني',
           'تخصيص حجم الخط وألوان الثيم بلا حدود'
         ],
-        confirmText: 'ترقية حسابي إلى Pro',
+        confirmText: 'ترقية حسابي إلى Pro (19 ₪ فقط)',
         cancelText: 'لاحقاً'
       }).then(upgrade => {
         if (upgrade) {
@@ -3095,7 +3095,7 @@ export class CvBuilderComponent implements OnInit {
         title: `باقة المحترفين Pro مطلوبة`,
         message: `قالب "${tmpl.arabicName || tmpl.name}" متاح حصرياً لأعضاء باقة المحترفين Pro. هل ترغب في ترقية حسابك الآن للحصول على جميع القوالب الحصرية ورصيد غير محدود للذكاء الاصطناعي؟`,
         type: 'upgrade',
-        confirmText: 'ترقية الحساب الآن',
+        confirmText: 'ترقية الحساب الآن (19 ₪ فقط)',
         cancelText: 'إلغاء'
       });
 
@@ -3237,7 +3237,7 @@ export class CvBuilderComponent implements OnInit {
         title: 'اللغات الإضافية تتطلب باقة Pro',
         message: 'تتضمن السيرة الذاتية في الباقة المجانية لغتين أساسيتين (العربية والإنجليزية). لإضافة لغة ثالثة أو أكثر (كالفرنسية، الألمانية، التركية...) لفتح آفاق العمل الدولي، يرجى الترقية إلى باقة المحترفين Pro.',
         type: 'upgrade',
-        confirmText: 'ترقية الحساب الآن',
+        confirmText: 'ترقية الحساب الآن (19 ₪ فقط)',
         cancelText: 'لاحقاً'
       });
 

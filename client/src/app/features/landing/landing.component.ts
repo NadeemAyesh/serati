@@ -496,7 +496,10 @@ import { AuthService } from '../../core/services/auth.service';
               <div>
                 <h3 class="text-xl font-black text-slate-800 mb-2">الباقة المجانية</h3>
                 <p class="text-slate-500 text-xs mb-6">مثالية لتجربة المنصة وبناء سيرة ذاتية قياسية</p>
-                <div class="text-4xl font-black text-slate-900 mb-6">0$ <span class="text-sm font-normal text-slate-500">/ مدى الحياة</span></div>
+                <div class="text-4xl font-black text-slate-900 mb-6 flex items-baseline gap-1">
+                  <span>0 ₪</span>
+                  <span class="text-sm font-normal text-slate-500">/ مجاناً دائماً</span>
+                </div>
                 
                 <ul class="space-y-3 text-sm text-slate-600 mb-8">
                   <li class="flex items-center gap-2">
@@ -513,7 +516,7 @@ import { AuthService } from '../../core/services/auth.service';
                   </li>
                   <li class="flex items-center gap-2">
                     <span class="material-symbols-rounded text-base text-emerald-500">check_circle</span>
-                    <span>تصدير PDF قياسي</span>
+                    <span>تصدير PDF قياسي عالي الدقة</span>
                   </li>
                   <li class="flex items-center gap-2 text-slate-400">
                     <span class="material-symbols-rounded text-base text-purple-500">check_circle</span>
@@ -527,13 +530,16 @@ import { AuthService } from '../../core/services/auth.service';
             <!-- باقة المحترفين والذكاء الاصطناعي Pro AI -->
             <div class="bg-gradient-to-b from-blue-900 to-indigo-950 text-white rounded-3xl p-8 border-2 border-indigo-400 shadow-2xl relative flex flex-col justify-between transform lg:-translate-y-2">
               <div class="absolute -top-4 right-8 bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 font-black text-xs px-3 py-1 rounded-full shadow-md flex items-center gap-1">
-                <span>الأكثر طلباً</span>
+                <span>الأكثر طلباً وتوفيراً</span>
                 <span class="material-symbols-rounded text-xs">local_fire_department</span>
               </div>
               <div>
                 <h3 class="text-xl font-black mb-2">باقة المحترفين (Pro AI)</h3>
                 <p class="text-indigo-200 text-xs mb-6">قوة الذكاء الاصطناعي الكاملة وقوالب VIP الحصرية</p>
-                <div class="text-4xl font-black mb-6">9$ <span class="text-sm font-normal text-indigo-300">/ شهرياً</span></div>
+                <div class="text-4xl font-black mb-6 flex items-baseline gap-1">
+                  <span>19 ₪</span>
+                  <span class="text-sm font-normal text-indigo-300">/ شهرياً</span>
+                </div>
                 
                 <ul class="space-y-3 text-sm text-indigo-100 mb-8">
                   <li class="flex items-center gap-2">
@@ -550,7 +556,7 @@ import { AuthService } from '../../core/services/auth.service';
                   </li>
                   <li class="flex items-center gap-2">
                     <span class="material-symbols-rounded text-base text-emerald-400">check_circle</span>
-                    <span>فتح كافة القوالب الحصرية الحديثة (7 قوالب)</span>
+                    <span>فتح كافة القوالب الحصرية الحديثة (7 قوالب VIP)</span>
                   </li>
                   <li class="flex items-center gap-2">
                     <span class="material-symbols-rounded text-base text-emerald-400">check_circle</span>
@@ -558,12 +564,12 @@ import { AuthService } from '../../core/services/auth.service';
                   </li>
                   <li class="flex items-center gap-2">
                     <span class="material-symbols-rounded text-base text-emerald-400">check_circle</span>
-                    <span>تخصيص كامل للألوان والخطوط (7 خطوط)</span>
+                    <span>تخصيص كامل للألوان وكافة الخطوط الاحترافية</span>
                   </li>
                 </ul>
               </div>
               <a routerLink="/register" class="btn bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white font-bold w-full shadow-lg">
-                اشترك في باقة Pro الآن
+                اشترك في باقة Pro الآن (19 ₪ فقط)
               </a>
             </div>
 
@@ -571,8 +577,11 @@ import { AuthService } from '../../core/services/auth.service';
             <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200 flex flex-col justify-between">
               <div>
                 <h3 class="text-xl font-black text-slate-800 mb-2">الباقة الدائمة (Lifetime)</h3>
-                <p class="text-slate-500 text-xs mb-6">دفعة واحدة لامتلاك كل المزايا إلى الأبد</p>
-                <div class="text-4xl font-black text-slate-900 mb-6">29$ <span class="text-sm font-normal text-slate-500">/ لمرة واحدة</span></div>
+                <p class="text-slate-500 text-xs mb-6">دفعة واحدة بسيطة لامتلاك كل المزايا إلى الأبد</p>
+                <div class="text-4xl font-black text-slate-900 mb-6 flex items-baseline gap-1">
+                  <span>49 ₪</span>
+                  <span class="text-sm font-normal text-slate-500">/ لمرة واحدة فقط</span>
+                </div>
                 
                 <ul class="space-y-3 text-sm text-slate-600 mb-8">
                   <li class="flex items-center gap-2">
@@ -581,15 +590,19 @@ import { AuthService } from '../../core/services/auth.service';
                   </li>
                   <li class="flex items-center gap-2">
                     <span class="material-symbols-rounded text-base text-emerald-500">check_circle</span>
-                    <span>رصيد ذكاء اصطناعي ضخم</span>
+                    <span>رصيد ذكاء اصطناعي مفتوح مدى الحياة</span>
                   </li>
                   <li class="flex items-center gap-2">
                     <span class="material-symbols-rounded text-base text-emerald-500">check_circle</span>
-                    <span>دعم فني وأولوية التحديثات</span>
+                    <span>تعديل وتحميل السير الذاتية في أي وقت بلا قيود</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-rounded text-base text-emerald-500">check_circle</span>
+                    <span>دعم فني مباشر وأولوية التحديثات</span>
                   </li>
                 </ul>
               </div>
-              <a routerLink="/register" class="btn btn-secondary w-full">احصل على الباقة الدائمة</a>
+              <a routerLink="/register" class="btn btn-secondary w-full">احصل على الباقة الدائمة (49 ₪)</a>
             </div>
 
           </div>

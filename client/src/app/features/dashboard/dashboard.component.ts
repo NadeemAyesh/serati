@@ -345,12 +345,16 @@ import { CV } from '../../core/models/cv.model';
           <div class="text-center mb-6">
             <span class="badge badge-pro py-1 px-4 mb-3 inline-flex items-center gap-1">
               <span class="material-symbols-rounded text-xs text-amber-500">workspace_premium</span>
-              <span>الترقية للاشتراك الاحترافي</span>
+              <span>الترقية للاشتراك الاحترافي Pro</span>
             </span>
             <h3 class="text-2xl font-black text-slate-900">فتح كافة المزايا والقوالب</h3>
             <p class="text-slate-500 text-sm mt-1">
               استمتع برصيد ذكاء اصطناعي غير محدود وقوالب VIP الحصرية
             </p>
+            <div class="mt-3 inline-flex items-center gap-2 bg-amber-50 text-amber-900 border border-amber-200/80 px-4 py-1.5 rounded-full text-xs font-black shadow-sm">
+              <span class="material-symbols-rounded text-base text-amber-600">sell</span>
+              <span>عرض خاص: 19 ₪ شهرياً فقط (أو 49 ₪ مدى الحياة)</span>
+            </div>
           </div>
 
           <div class="space-y-3 mb-8">
@@ -376,7 +380,7 @@ import { CV } from '../../core/models/cv.model';
             class="btn btn-primary w-full py-3 text-base font-bold shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2 cursor-pointer"
           >
             <span class="material-symbols-rounded text-lg">rocket_launch</span>
-            <span>تفعيل باقة Pro الآن (تجربة سريعة)</span>
+            <span>تفعيل باقة Pro الآن (19 ₪ فقط)</span>
           </button>
 
         </div>
