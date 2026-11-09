@@ -6,6 +6,7 @@ import { timeout, catchError, of } from 'rxjs';
 import { AuthService } from '../../core/services/auth.service';
 import { CvService } from '../../core/services/cv.service';
 import { AiService } from '../../core/services/ai.service';
+import { JobService } from '../../core/services/job.service';
 import { AlertService } from '../../core/services/alert.service';
 import { CV } from '../../core/models/cv.model';
 
@@ -46,6 +47,24 @@ import { CV } from '../../core/models/cv.model';
                 باقة مجانية
               </span>
             </div>
+
+            <!-- رابط المقابلات والامتحانات -->
+            <a 
+              routerLink="/interviews-exams" 
+              class="hidden md:flex items-center gap-1.5 text-indigo-700 bg-indigo-50 hover:bg-indigo-100 text-xs font-bold py-2 px-3 rounded-xl border border-indigo-200 transition-colors"
+            >
+              <span class="material-symbols-rounded text-base text-indigo-600">quiz</span>
+              <span>المقابلات والامتحانات</span>
+            </a>
+
+            <!-- زر بوت الوظائف -->
+            <button 
+              (click)="jobService.toggleBot(true)" 
+              class="hidden sm:flex items-center gap-1.5 text-slate-700 bg-slate-100 hover:bg-slate-200 text-xs font-bold py-2 px-3 rounded-xl transition-colors cursor-pointer"
+            >
+              <span class="material-symbols-rounded text-base text-amber-500">smart_toy</span>
+              <span>وظائف فلسطين 🇵🇸</span>
+            </button>
 
             <!-- زر الترقية السريع -->
             <button 
@@ -161,6 +180,39 @@ import { CV } from '../../core/models/cv.model';
             </button>
           </div>
 
+        </div>
+
+        <!-- بانر التجهيز للتوظيف وبوت الوظائف -->
+        <div class="mb-10 bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-3xl p-6 sm:p-7 shadow-lg flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
+          <div class="absolute -top-24 -left-24 w-64 h-64 bg-blue-500/10 rounded-full blur-2xl pointer-events-none"></div>
+          
+          <div class="max-w-2xl relative z-10">
+            <div class="inline-flex items-center gap-2 bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-xs font-bold mb-3 border border-blue-400/30">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              <span>جديد: مركز التجهيز للتوظيف وشواغر العمل الحية</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-black mb-2">استعد للمقابلات واكتشف أحدث الوظائف في فلسطين</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+              تدرّب على أسئلة المقابلات الشخصية، وخُض نماذج امتحانات ديوان الموظفين، الأونروا، والبنوك التفاعلية، ودع بوت الوظائف الذكي يجلب لك شواغر تخصصك باستمرار!
+            </p>
+          </div>
+
+          <div class="flex flex-wrap sm:flex-nowrap items-center gap-3 relative z-10 w-full md:w-auto">
+            <a 
+              routerLink="/interviews-exams" 
+              class="btn btn-primary py-3 px-5 text-xs sm:text-sm w-full sm:w-auto text-center shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2"
+            >
+              <span class="material-symbols-rounded text-base">quiz</span>
+              <span>بنك المقابلات والامتحانات</span>
+            </a>
+            <button 
+              (click)="jobService.toggleBot(true)" 
+              class="btn btn-secondary py-3 px-5 text-xs sm:text-sm w-full sm:w-auto text-center flex items-center justify-center gap-2 cursor-pointer bg-white/10 hover:bg-white/20 text-white border-white/20"
+            >
+              <span class="material-symbols-rounded text-base text-amber-400">smart_toy</span>
+              <span>بوت وظائف فلسطين 🇵🇸</span>
+            </button>
+          </div>
         </div>
 
         <!-- قسم عرض السير الذاتية -->
@@ -391,6 +443,7 @@ import { CV } from '../../core/models/cv.model';
 })
 export class DashboardComponent implements OnInit {
   authService = inject(AuthService);
+  jobService = inject(JobService);
   private cvService = inject(CvService);
   private aiService = inject(AiService);
   private alertService = inject(AlertService);

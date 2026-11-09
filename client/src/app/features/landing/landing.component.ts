@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../core/services/auth.service';
+import { JobService } from '../../core/services/job.service';
 
 @Component({
   selector: 'app-landing',
@@ -26,26 +27,37 @@ import { AuthService } from '../../core/services/auth.service';
           </div>
 
           <!-- الروابط في المنتصف Desktop Links -->
-          <div class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600">
+          <div class="hidden lg:flex items-center gap-6 text-sm font-bold text-slate-600">
             <a href="#concept" class="hover:text-blue-600 transition-colors">الفكرة</a>
             <a href="#features" class="hover:text-blue-600 transition-colors">المزايا</a>
             <a href="#steps" class="hover:text-blue-600 transition-colors">خطوات العمل</a>
             <a href="#templates" class="hover:text-blue-600 transition-colors">القوالب</a>
-            <a href="#pricing" class="hover:text-blue-600 transition-colors">الأسعار والاشتراكات</a>
-            <a href="#about" class="hover:text-blue-600 transition-colors">من نحن</a>
+            <a routerLink="/interviews-exams" class="text-indigo-600 hover:text-indigo-800 transition-colors flex items-center gap-1 bg-indigo-50 px-2.5 py-1 rounded-lg border border-indigo-100">
+              <span class="material-symbols-rounded text-sm">quiz</span>
+              <span>المقابلات والامتحانات</span>
+            </a>
           </div>
 
-          <!-- أزرار الحساب والدخول -->
-          <div class="flex items-center gap-3">
+          <!-- أزرار الحساب والدخول وبوت الوظائف -->
+          <div class="flex items-center gap-2.5">
+            <!-- زر بوت الوظائف السريع -->
+            <button 
+              (click)="jobService.toggleBot(true)"
+              class="hidden sm:flex items-center gap-1.5 bg-gradient-to-r from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 text-indigo-700 text-xs font-bold py-2 px-3 rounded-xl border border-indigo-200 transition-all cursor-pointer shadow-xs"
+            >
+              <span class="material-symbols-rounded text-sm text-indigo-600">smart_toy</span>
+              <span>وظائف فلسطين 🇵🇸</span>
+            </button>
+
             <ng-container *ngIf="authService.isAuthenticated(); else guestButtons">
-              <a routerLink="/dashboard" class="btn btn-primary shadow-md flex items-center gap-2">
+              <a routerLink="/dashboard" class="btn btn-primary text-xs sm:text-sm py-2 px-3 sm:px-4 shadow-md flex items-center gap-1.5">
                 <span>لوحة التحكم</span>
-                <span class="material-symbols-rounded text-base">arrow_back</span>
+                <span class="material-symbols-rounded text-sm">arrow_back</span>
               </a>
             </ng-container>
             <ng-template #guestButtons>
-              <a routerLink="/login" class="btn btn-secondary text-sm">تسجيل الدخول</a>
-              <a routerLink="/register" class="btn btn-primary text-sm shadow-blue-500/20">حساب جديد مجاناً</a>
+              <a routerLink="/login" class="btn btn-secondary text-xs sm:text-sm py-2 px-3">تسجيل الدخول</a>
+              <a routerLink="/register" class="btn btn-primary text-xs sm:text-sm py-2 px-3 sm:px-4 shadow-blue-500/20">حساب مجاني</a>
             </ng-template>
           </div>
 
@@ -92,6 +104,20 @@ import { AuthService } from '../../core/services/auth.service';
                 <span class="material-symbols-rounded text-lg text-purple-300">auto_awesome</span>
                 <span>ارفع سيرتك بالذكاء الاصطناعي</span>
               </a>
+            </div>
+
+            <!-- شريط الوصول السريع للقسم الجديد وبوت الوظائف -->
+            <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
+              <a routerLink="/interviews-exams" class="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-50 to-blue-50 hover:from-indigo-100 hover:to-blue-100 text-indigo-800 font-bold text-xs sm:text-sm py-2.5 px-5 rounded-2xl border border-indigo-200 shadow-sm transition-all">
+                <span class="material-symbols-rounded text-indigo-600 text-lg">quiz</span>
+                <span>جديد: بنك أسئلة المقابلات وامتحانات التوظيف المؤسسية</span>
+                <span class="material-symbols-rounded text-sm">arrow_back</span>
+              </a>
+              <button (click)="jobService.toggleBot(true)" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm py-2.5 px-5 rounded-2xl shadow-md transition-all cursor-pointer">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                <span class="material-symbols-rounded text-amber-400 text-lg">smart_toy</span>
+                <span>بوت شواغر فلسطين الحية 🇵🇸</span>
+              </button>
             </div>
 
             <!-- مؤشرات الثقة والأمان -->
@@ -648,7 +674,7 @@ import { AuthService } from '../../core/services/auth.service';
           <div class="flex items-center gap-6 text-xs">
             <a href="#concept" class="hover:text-white transition-colors">الفكرة</a>
             <a href="#features" class="hover:text-white transition-colors">المزايا</a>
-            <a href="#steps" class="hover:text-white transition-colors">خطوات العمل</a>
+            <a routerLink="/interviews-exams" class="text-indigo-400 hover:text-indigo-300 font-bold transition-colors">المقابلات والامتحانات</a>
             <a href="#pricing" class="hover:text-white transition-colors">الأسعار</a>
             <a href="#about" class="hover:text-white transition-colors">من نحن</a>
           </div>
@@ -660,4 +686,5 @@ import { AuthService } from '../../core/services/auth.service';
 })
 export class LandingComponent {
   authService = inject(AuthService);
+  jobService = inject(JobService);
 }

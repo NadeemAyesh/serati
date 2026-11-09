@@ -41,6 +41,8 @@ app.get('/api/health', (req, res) => {
 app.use('/api/auth', require('./routes/auth.routes'));
 app.use('/api/cv', require('./routes/cv.routes'));
 app.use('/api/ai', require('./routes/ai.routes'));
+app.use('/api/interviews-exams', require('./routes/interviews.routes'));
+app.use('/api/jobs', require('./routes/jobs.routes'));
 
 // Serve Angular static frontend when built (Production ready single-service deployment)
 const clientDistPath = path.join(__dirname, '../../client/dist/client/browser');
